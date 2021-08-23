@@ -87,5 +87,9 @@ startForm.addEventListener('click', () => {
   radioContainers.forEach((radioEl) => {
     // Remove Selected Label Styling
     radioEl.classList.remove('selected-label');
+    // Add it back if the radio is checked
+    if (radioEl.children[1].checked) {
+      radioEl.classList.add('selected-label');
+    }
   });
 });
