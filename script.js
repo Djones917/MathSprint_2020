@@ -93,3 +93,6 @@ startForm.addEventListener('click', () => {
     }
   });
 });
+
+// Event Listeners
+startForm.addEventListener('click', selectQuestionAmount);
