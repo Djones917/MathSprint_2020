@@ -83,9 +83,22 @@ function createEquations() {
 //   itemContainer.appendChild(bottomSpacer);
 // }
 
+// Get the value from selected radio button
+function getRadioValue() {
+  let radioValue;
+  radioInputs.forEach((radioInput) => {
+    if (radioInput.checked) {
+       radioValue = radioInput.value;      
+    }
+  });
+  return radioValue;
+}
+
 // Form that decides amount of questions
 function selectQuestionAmount(e) {
   e.preventDefault();
+  questionAmount = getRadioValue();
+  console.log('question amount:', questionAmount);
 }
 
 startForm.addEventListener('click', () => {
@@ -100,4 +113,4 @@ startForm.addEventListener('click', () => {
 });
 
 // Event Listeners
-startForm.addEventListener('click', selectQuestionAmount);
+startForm.addEventListener('submit', selectQuestionAmount);
