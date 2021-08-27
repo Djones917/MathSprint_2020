@@ -83,6 +83,13 @@ function createEquations() {
 //   itemContainer.appendChild(bottomSpacer);
 // }
 
+// Navigate from splash page to countdown page
+function showCountDown() {
+ countdownPage.hidden = false;
+ splashPage.hidden = true;
+}
+
+
 // Get the value from selected radio button
 function getRadioValue() {
   let radioValue;
@@ -94,11 +101,13 @@ function getRadioValue() {
   return radioValue;
 }
 
+
 // Form that decides amount of questions
 function selectQuestionAmount(e) {
   e.preventDefault();
   questionAmount = getRadioValue();
   console.log('question amount:', questionAmount);
+  showCountDown();
 }
 
 startForm.addEventListener('click', () => {
